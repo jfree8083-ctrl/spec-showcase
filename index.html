@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Performance & Specification Showcase</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-brand">Apex Spec Showcase</div>
+    <ul class="nav-links">
+      <li><a href="#showcase">Showcase</a></li>
+      <li><a href="#comparison">Compare</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Header -->
+  <header class="hero">
+    <h1>High-Performance Machine Specs</h1>
+    <p>Explore technical specifications, speed ratings, and engineering metrics in one place.</p>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="container">
+
+    <!-- Add New Vehicle Section -->
+    <section class="form-section">
+      <button id="toggleFormBtn" class="toggle-form-btn">+ Add New Vehicle</button>
+      
+      <form id="addVehicleForm" class="vehicle-form hidden">
+        <h3>Add Vehicle Specifications</h3>
+        <div class="form-grid">
+          <input type="text" id="vName" placeholder="Model Name (e.g. Kawasaki Ninja 400)" required />
+          <select id="vCategory" required>
+            <option value="" disabled selected>Select Category</option>
+            <option value="Superbike">Superbike</option>
+            <option value="Sports Roadster">Sports Roadster</option>
+            <option value="Modern Classic">Modern Classic</option>
+          </select>
+          <input type="text" id="vEngine" placeholder="Engine (e.g. 399cc, Liquid-Cooled)" required />
+          <input type="text" id="vPower" placeholder="Power (e.g. 45 PS @ 10,000 RPM)" required />
+          <input type="text" id="vTorque" placeholder="Torque (e.g. 37 Nm @ 8,000 RPM)" required />
+          <input type="text" id="vTopSpeed" placeholder="Top Speed (e.g. 180 km/h)" required />
+          <input type="text" id="vWeight" placeholder="Kerb Weight (e.g. 168 kg)" required />
+          <input type="text" id="vFeatures" placeholder="Features (Comma separated e.g. ABS, Slipper Clutch)" required />
+        </div>
+        <button type="submit" class="submit-btn">Add to Showcase</button>
+      </form>
+    </section>
+
+    <!-- Search & Filter Bar -->
+    <section class="controls-section">
+      <input type="text" id="searchInput" placeholder="Search models or specs..." />
+      <select id="categoryFilter">
+        <option value="all">All Categories</option>
+        <option value="Superbike">Superbike</option>
+        <option value="Sports Roadster">Sports Roadster</option>
+        <option value="Modern Classic">Modern Classic</option>
+      </select>
+    </section>
+
+    <!-- Dynamic Showcase Cards Grid -->
+    <section id="showcase" class="cards-grid">
+      <!-- Cards will be populated dynamically via script.js -->
+    </section>
+  </main>
+
+  <!-- Detailed Spec Modal -->
+  <div id="specModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <div id="modalDetails"></div>
+    </div>
+  </div>
+
+  <!-- Sticky Bottom Comparison Bar -->
+  <div id="compareBar" class="compare-bar">
+    <span id="compareCount">0 vehicles selected for comparison</span>
+    <button id="compareBtn" class="compare-trigger-btn" disabled>Compare Side-by-Side</button>
+  </div>
+
+  <!-- Comparison Modal -->
+  <div id="compareModal" class="modal">
+    <div class="modal-content modal-large">
+      <span class="close-btn close-compare">&times;</span>
+      <h2>Spec Comparison</h2>
+      <div id="compareTableContainer" class="compare-table-wrapper"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
